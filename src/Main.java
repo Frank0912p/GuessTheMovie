@@ -5,7 +5,10 @@ public class Main {
     }
 
     public void inicio() {
-        Juego juego = new Juego();
+        final int MAX_INTENTOS = 10;
+        final String PELICULAS = "Titulos_Peliculas.txt";
+
+        Juego juego = new Juego(MAX_INTENTOS, PELICULAS);
         juego.inicio();
     }
 }
