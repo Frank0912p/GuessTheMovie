@@ -1,6 +1,6 @@
-public class Main {
+public class MoretaFrancisMain {
     public static void main(String[] args) {
-        Main programa = new Main();
+        MoretaFrancisMain programa = new MoretaFrancisMain();
         programa.inicio();
     }
 
@@ -9,7 +9,7 @@ public class Main {
         final int MAX_INTENTOS = 10;
         final String PELICULAS = "Titulos_Peliculas.txt";
         //Creamos un objeto de la clase Juego
-        Juego juego = new Juego(MAX_INTENTOS, PELICULAS);
+        MoretaFrancisJuego juego = new MoretaFrancisJuego(MAX_INTENTOS, PELICULAS);
         //Llamamos al metodo que inicia todo el proceso del juego
         juego.inicio();
     }

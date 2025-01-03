@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.File;
 //Se crea la clase Juego y declaramos sus atributos
-public class Juego {
+public class MoretaFrancisJuego {
     private int intentosRestantes;
     private final String peliculas;
     private String tituloEscogido;
@@ -10,7 +10,7 @@ public class Juego {
     private int contadorAciertos;
     private final Scanner scanner;
     //Creacion del metodo contructor
-    public Juego(int maxIntentos, String peliculas) {
+    public MoretaFrancisJuego(int maxIntentos, String peliculas) {
         this.intentosRestantes = maxIntentos;
         this.peliculas = peliculas;
         this.letrasAcertadas = new char[26];
