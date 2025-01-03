@@ -94,4 +94,40 @@ public class Juego {
             }
         }
     }
+
+    private void adivinarLetra() {
+        System.out.println("Ingresa una letra: ");
+        String letra = scanner.nextLine().toLowerCase();
+        if (letra.length() != 1 || !Character.isLetter(letra.charAt(0))) {
+            System.out.println("\uD83D\uDE45\u200D♂\uFE0F Debes ingresar solo una letra.");
+            return;
+        }
+
+        char letraAdivinada = letra.charAt(0);
+        if (compruebaLetraAdivinada(letraAdivinada)) {
+            System.out.println("Esta letra ya la adivinaste, intenta con otra.");
+            return;
+        }
+
+        letrasAcertadas[contadorAciertos++] = letraAdivinada;
+        if (tituloEscogido.contains(String.valueOf(letraAdivinada))) {
+            System.out.println("✅ Correcto! Vas por buen camino.");
+        } else {
+            System.out.println("❌ Incorrecto, pierdes un intento.");
+            intentosRestantes--;
+        }
+        if (!tituloEscogidoOculto.contains("*")) {
+            System.out.println("Bien jugado, adivinaste la pelicula: " + tituloEscogido);
+            System.exit(0);
+        }
+    }
+
+    private boolean compruebaLetraAdivinada(char letraInsertada) {
+        for (int i = 0; i < contadorAciertos; i++) {
+            if (letrasAcertadas[i] == letraInsertada) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
