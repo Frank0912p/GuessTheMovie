@@ -30,4 +30,22 @@ public class Juego {
         }
         return listaTitulos.toArray(new String[0]);
     }
+
+    private void tituloAleatorio(String[] titulos) {
+        Random random = new Random();
+        this.tituloEscogido = titulos[random.nextInt(titulos.length)].toLowerCase();
+        this.tituloEscogidoOculto = tituloEscogidoOculto(this.tituloEscogido);
+    }
+
+    private String tituloEscogidoOculto(String tituloEscogido) {
+        StringBuilder oculto = new StringBuilder();
+        for (char c : tituloEscogido.toCharArray()) {
+            if (Character.isLetter(c)) {
+                oculto.append("*");
+            } else {
+                oculto.append(c);
+            }
+        }
+        return oculto.toString();
+    }
 }
