@@ -111,6 +111,7 @@ public class Juego {
 
         letrasAcertadas[contadorAciertos++] = letraAdivinada;
         if (tituloEscogido.contains(String.valueOf(letraAdivinada))) {
+            tituloEscogidoOculto = actualizaTituloOculto(tituloEscogido, tituloEscogidoOculto, letraAdivinada);
             System.out.println("✅ Correcto! Vas por buen camino.");
         } else {
             System.out.println("❌ Incorrecto, pierdes un intento.");
@@ -129,5 +130,15 @@ public class Juego {
             }
         }
         return false;
+    }
+
+    private String actualizaTituloOculto(String titulo, String tituloOculto, char letraAcertada) {
+        StringBuilder actual = new StringBuilder(tituloOculto);
+        for (int i = 0; i < titulo.length(); i++) {
+            if (titulo.charAt(i) == letraAcertada) {
+                actual.setCharAt(i, letraAcertada);
+            }
+        }
+        return actual.toString();
     }
 }
