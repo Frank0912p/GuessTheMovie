@@ -141,4 +141,16 @@ public class Juego {
         }
         return actual.toString();
     }
+
+    private void adivinarTitulo() {
+        System.out.println("Wow que arriesgado! Ingresa el titulo: ");
+        String tituloIsertado = scanner.nextLine().toLowerCase();
+        if (tituloIsertado.equals(tituloEscogido)) {
+            System.out.println("\uD83D\uDE31 Adivinaste! La pelicula es: " + tituloEscogido);
+            System.exit(0);
+        } else {
+            System.out.println("Esa no es la pelicula, perdiste \uD83D\uDC80.");
+            System.exit(0);
+        }
+    }
 }
