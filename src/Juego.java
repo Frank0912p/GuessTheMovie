@@ -17,4 +17,17 @@ public class Juego {
         this.contadorAciertos = 0;
         this.scanner = new Scanner(System.in);
     }
+
+    private String[] leerFichero(String peliculas) {
+        ArrayList<String> listaTitulos = new ArrayList<>();
+        File fichero = new File(peliculas);
+        try (Scanner scanner = new Scanner(fichero)) {
+            while (scanner.hasNextLine()) {
+                listaTitulos.add(scanner.nextLine());
+            }
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+        return listaTitulos.toArray(new String[0]);
+    }
 }
